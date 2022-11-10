@@ -2,6 +2,8 @@
 
 生成和识别 QR 码的 Alfred Workflow。
 
+[⤓ 下载 Workflow](https://github.com/CYJB/Alfred-Workflow-QR/releases/latest/download/qr.alfredworkflow)
+
 ## 使用方法
 
 使用 `qr` 关键字生成指定文本的二维码，并使用默认方式打开。
