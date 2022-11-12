@@ -63,7 +63,7 @@
 	<key>createdby</key>
 	<string>CYJB</string>
 	<key>description</key>
-	<string>二维码</string>
+	<string>生成或识别二维码</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
