@@ -1,9 +1,0 @@
-{
-  "name": "alfred-workflow-qrcode",
-  "private": true,
-  "description": "Alfred Workfolw QRCode",
-  "version": "0.0.1",
-  "dependencies": {
-    "qrcode": "^1.5.1"
-  }
-}
