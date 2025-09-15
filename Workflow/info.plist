@@ -9,7 +9,31 @@
 	<key>connections</key>
 	<dict>
 		<key>3EA6A9C1-2481-461B-82E6-397F053DD1CE</key>
-		<array/>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6C9771B7-2E6E-474E-ABCC-75DB747DD586</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>6C9771B7-2E6E-474E-ABCC-75DB747DD586</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9C9BF1CE-D4F5-4ED0-9F1D-E783608F553A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>8BBC517A-639D-4455-82A1-F158D832FDEC</key>
 		<array>
 			<dict>
@@ -23,11 +47,24 @@
 				<false/>
 			</dict>
 		</array>
+		<key>9C9BF1CE-D4F5-4ED0-9F1D-E783608F553A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>774A9A0C-370A-4492-9128-78CF25849A8B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>AC78A799-95D5-4AEE-98BC-75826AEC3196</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>1C81B166-F846-4A4E-98FF-9390C866FA11</string>
+				<string>E0F5E7BA-2B15-49DD-8B43-F58CDEC48414</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -37,7 +74,7 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>E0F5E7BA-2B15-49DD-8B43-F58CDEC48414</string>
+				<string>1C81B166-F846-4A4E-98FF-9390C866FA11</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -73,6 +110,21 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>imageresizemode</key>
+				<integer>0</integer>
+				<key>stackview</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.userinterface.image</string>
+			<key>uid</key>
+			<string>9C9BF1CE-D4F5-4ED0-9F1D-E783608F553A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>keyword</key>
@@ -94,45 +146,59 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>autopaste</key>
+				<key>concurrently</key>
 				<false/>
-				<key>clipboardtext</key>
-				<string>{query}</string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>transient</key>
-				<false/>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>generate.js</string>
+				<key>type</key>
+				<integer>8</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
+			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>1C81B166-F846-4A4E-98FF-9390C866FA11</string>
+			<string>3EA6A9C1-2481-461B-82E6-397F053DD1CE</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>openwith</key>
+				<string></string>
+				<key>sourcefile</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openfile</string>
+			<key>uid</key>
+			<string>774A9A0C-370A-4492-9128-78CF25849A8B</string>
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
+				<key>matchmode</key>
+				<integer>1</integer>
+				<key>matchstring</key>
+				<string>\n</string>
+				<key>regexcaseinsensitive</key>
 				<false/>
-				<key>escaping</key>
-				<integer>4</integer>
-				<key>script</key>
-				<string># 注入环境变量
-[[ -s ~/.bashrc ]] &amp;&amp; source ~/.bashrc
-# 执行脚本
-./generate.js "$qrPath" "{query}"</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
+				<key>regexmultiline</key>
+				<false/>
+				<key>replacestring</key>
 				<string></string>
-				<key>type</key>
-				<integer>0</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.utility.replace</string>
 			<key>uid</key>
-			<string>3EA6A9C1-2481-461B-82E6-397F053DD1CE</string>
+			<string>6C9771B7-2E6E-474E-ABCC-75DB747DD586</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -186,16 +252,13 @@
 				<key>escaping</key>
 				<integer>4</integer>
 				<key>script</key>
-				<string># 注入环境变量
-[[ -s ~/.bashrc ]] &amp;&amp; source ~/.bashrc
-# 执行脚本
-./scan.js | tr -d '\n'</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
 				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>scan.js</string>
 				<key>type</key>
-				<integer>0</integer>
+				<integer>8</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
@@ -204,63 +267,145 @@
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>1C81B166-F846-4A4E-98FF-9390C866FA11</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>生成和识别二维码
 
-可以使用 qrPath 环境变量设置生成二维码的文件路径。</string>
+生成二维码后，会直接使用 Image View（需要 Alfred 5.5）显示二维码，使用 `Esc` 隐藏，也可以使用回车或 `⌘` `o` 在默认应用中打开图片。</string>
 	<key>uidata</key>
 	<dict>
 		<key>1C81B166-F846-4A4E-98FF-9390C866FA11</key>
 		<dict>
 			<key>xpos</key>
-			<integer>590</integer>
+			<real>445</real>
 			<key>ypos</key>
-			<integer>30</integer>
+			<real>295</real>
 		</dict>
 		<key>3EA6A9C1-2481-461B-82E6-397F053DD1CE</key>
 		<dict>
 			<key>xpos</key>
-			<integer>380</integer>
+			<real>230</real>
 			<key>ypos</key>
-			<integer>30</integer>
+			<real>30</real>
+		</dict>
+		<key>6C9771B7-2E6E-474E-ABCC-75DB747DD586</key>
+		<dict>
+			<key>xpos</key>
+			<real>425</real>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>774A9A0C-370A-4492-9128-78CF25849A8B</key>
+		<dict>
+			<key>xpos</key>
+			<real>760</real>
+			<key>ypos</key>
+			<real>30</real>
 		</dict>
 		<key>8BBC517A-639D-4455-82A1-F158D832FDEC</key>
 		<dict>
 			<key>xpos</key>
-			<integer>180</integer>
+			<real>30</real>
 			<key>ypos</key>
-			<integer>30</integer>
+			<real>30</real>
+		</dict>
+		<key>9C9BF1CE-D4F5-4ED0-9F1D-E783608F553A</key>
+		<dict>
+			<key>xpos</key>
+			<real>545</real>
+			<key>ypos</key>
+			<real>30</real>
 		</dict>
 		<key>AC78A799-95D5-4AEE-98BC-75826AEC3196</key>
 		<dict>
 			<key>xpos</key>
-			<integer>380</integer>
+			<real>230</real>
 			<key>ypos</key>
-			<integer>170</integer>
+			<real>170</real>
 		</dict>
 		<key>E0F5E7BA-2B15-49DD-8B43-F58CDEC48414</key>
 		<dict>
 			<key>xpos</key>
-			<integer>590</integer>
+			<real>440</real>
 			<key>ypos</key>
-			<integer>170</integer>
+			<real>170</real>
 		</dict>
 		<key>E8207EE1-C380-4D2D-9B7B-07CC564329EB</key>
 		<dict>
 			<key>xpos</key>
-			<integer>180</integer>
+			<real>30</real>
 			<key>ypos</key>
-			<integer>170</integer>
+			<real>170</real>
 		</dict>
 	</dict>
-	<key>variables</key>
-	<dict>
-		<key>qrPath</key>
-		<string>$TMPDIR/qr.png</string>
-	</dict>
+	<key>userconfigurationconfig</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>$TMPDIR</string>
+				<key>filtermode</key>
+				<integer>1</integer>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<false/>
+			</dict>
+			<key>description</key>
+			<string>生成二维码的存储目录，使用 $TMPDIR 表示临时目录</string>
+			<key>label</key>
+			<string>二维码存储目录</string>
+			<key>type</key>
+			<string>filepicker</string>
+			<key>variable</key>
+			<string>directory</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>qrcode.png</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>生成二维码的文件名</string>
+			<key>label</key>
+			<string>二维码文件名</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>filename</string>
+		</dict>
+	</array>
+	<key>variablesdontexport</key>
+	<array/>
 	<key>version</key>
-	<string>1.0.1</string>
+	<string>1.1.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/CYJB/Alfred-Workflow-QR</string>
 </dict>

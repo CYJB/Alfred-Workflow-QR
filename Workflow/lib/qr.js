@@ -54,7 +54,7 @@ function generateQRCode(path, text, label) {
   const cgImage = $.CGBitmapContextCreateImage(bitmapContext);
   $.CGContextRelease(bitmapContext);
 
-  const image = $.NSImage.alloc.initWithCGImageSize(cgImage, $.NSMakeSize(284, 100));
+  const image = $.NSImage.alloc.initWithCGImageSize(cgImage, $.NSMakeSize(imageWidth, imageHeight));
   const bitmapRep = $.NSBitmapImageRep.imageRepWithData(image.TIFFRepresentation);
   const pngData = bitmapRep.representationUsingTypeProperties($.NSPNGFileType, $());
 

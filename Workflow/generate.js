@@ -13,15 +13,21 @@ let require;
   require = eval(content)(app);
 }
 
-const { normalize } = require('./lib/path');
+const { normalize, join } = require('./lib/path');
 const { generateQRCode } = require('./lib/qr');
 
 function run(argv) {
   // QR 码的生成路径，在 Workflow Configuration 中配置
-  const filePath = normalize(argv[0]);
+  ObjC.import('stdlib');
+  let filePath;
+  if ($.getenv('directory') && $.getenv('filename')) {
+    // 优先使用 configuration 中的配置
+    filePath = join(normalize($.getenv('directory')) + '/' + $.getenv('filename'));
+  } else {
+    filePath = normalize($.getenv('qrPath'));
+  }
   // QR 码的文本内容，移除前后的空白
-  const text = argv[1].trimStart().trimEnd();
+  const text = argv[0].trimStart().trimEnd();
   generateQRCode(filePath, text, text);
-  // 使用 finder 打开可能会报无权限的错误，改为使用 open 命令。
-  app.doShellScript(`open "${filePath}"`);
+  return filePath;
 }

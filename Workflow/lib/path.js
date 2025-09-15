@@ -7,10 +7,18 @@ app.includeStandardAdditions = true;
  */
 function normalize(path) {
   // 替换环境变量
-  console.log('path', path)
   path = path.replace(/\$([\w_][\w\d_]*)/, (_, name) => app.systemAttribute(name) || '');
   // 标准化字符串
   return $(path).stringByStandardizingPath.js;
 }
 
-module.exports = { normalize };
+/**
+ * 将指定路径连接起来。
+ * @param  {...string} paths 要连接的路径。
+ * @returns 链接后的路径。
+ */
+function join(...paths) {
+  return $(paths.join('/')).stringByStandardizingPath.js;
+}
+
+module.exports = { normalize, join };
